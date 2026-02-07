@@ -1,0 +1,14 @@
+# Ignore dependencies
+node_modules/
+frontend/node_modules/
+server/node_modules/
+
+# Ignore environment variables (security!)
+.env
+
+# Ignore build files
+dist/
+build/
+
+# Ignore system files
+.DS_Store
