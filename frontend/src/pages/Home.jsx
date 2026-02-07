@@ -8,7 +8,7 @@ const Home = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/blogs');
+      const response = await axios.get('/api/blogs');
       setBlogs(response.data);
       setLoading(false);
     } catch (error) {
@@ -25,7 +25,7 @@ const Home = () => {
   const deleteBlog = async (id) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+        await axios.delete(`/api/blogs/${id}`);
         // Refresh the list after deleting
         fetchBlogs();
       } catch (error) {

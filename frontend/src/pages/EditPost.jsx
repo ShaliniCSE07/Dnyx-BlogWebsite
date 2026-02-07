@@ -12,7 +12,7 @@ const EditPost = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/blogs`);
+        const response = await axios.get(`/api/blogs`);
         // Find the specific blog from the list or add a single GET route later
         const blog = response.data.find(b => b._id === id);
         setTitle(blog.title);
@@ -28,7 +28,7 @@ const EditPost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/blogs/${id}`, { title, author, content });
+      await axios.put(`/api/blogs/${id}`, { title, author, content });
       navigate('/');
     } catch (error) {
         console.error(error);
